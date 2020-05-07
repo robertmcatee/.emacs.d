@@ -15,13 +15,13 @@ Dev Tools
 git
 vs code
 emacs
-binutils
+base-devel
 
 Command Notes
 pacstrap -i /mnt base
 
 sudo pacman -S grub sudo dialog netctl wpa_supplicant dhcpcd linux linux-headers linux-firmware
 
-sudo pacman -S nano pulseaudio pulseaudio-alsa alsa-utils xorg xorg-xinit i3-gaps dmenu i3status chromium xfce4-terminal openconnect remmina freerdp git emacs binutils
+sudo pacman -S nano pulseaudio pulseaudio-alsa alsa-utils xorg xorg-xinit i3-gaps dmenu i3status chromium xfce4-terminal openconnect remmina freerdp git emacs base-devel
 
 vscode is AUR so followed that process
