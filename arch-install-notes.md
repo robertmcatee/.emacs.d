@@ -17,6 +17,10 @@
 - emacs
 - vs code (its AUR so makepkg -si)
 
+# Webcam Tools
+- qt4base
+- usbutils
+
 # Command Notes
 - pacstrap -i /mnt base
 - sudo pacman -S base-devel linux linux-headers linux-firmware grub sudo dialog netctl wpa_supplicant dhcpcd
