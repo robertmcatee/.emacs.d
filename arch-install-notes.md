@@ -18,11 +18,11 @@
 - vs code (its AUR so makepkg -si)
 
 # Webcam Tools
-- qt4base
+- qt5-base
 - usbutils
 
 # Command Notes
 - pacstrap -i /mnt base
 - sudo pacman -S base-devel linux linux-headers linux-firmware grub sudo dialog netctl wpa_supplicant dhcpcd
-- sudo pacman -S nano pulseaudio pulseaudio-alsa alsa-utils xorg xorg-xinit i3-gaps dmenu i3status i3lock chromium xfce4-terminal openconnect remmina freerdp git emacs
+- sudo pacman -S nano pulseaudio pulseaudio-alsa alsa-utils xorg xorg-xinit i3-gaps dmenu i3status i3lock chromium xfce4-terminal openconnect remmina freerdp git emacs qt5-base usbutils
 - sudo makepkg -si in git cloned vscode
