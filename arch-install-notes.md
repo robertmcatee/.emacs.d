@@ -5,6 +5,7 @@
 # Personal Preference in UI
 - i3gaps
 - i3lock
+- neofetch
 
 # Connect to Work VPN
 - remmina
