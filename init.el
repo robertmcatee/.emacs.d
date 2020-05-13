@@ -7,7 +7,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Lucida Console" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
 
 ;; MELPA
 (require 'package)
@@ -36,9 +36,13 @@
  initial-major-mode 'org-mode
  org-startup-indented '(t)
  package-selected-packages 'markdown-mode)
+(global-set-key [f11] 'toggle-menu-bar-mode-from-frame)
+(global-display-line-numbers-mode)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote markdown-mode)))
+ '(package-selected-packages (quote markdown-mode))
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
