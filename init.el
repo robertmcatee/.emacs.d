@@ -46,3 +46,5 @@
  '(package-selected-packages (quote markdown-mode))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
+
+(set-background-color "#16161D")
