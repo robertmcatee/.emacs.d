@@ -36,7 +36,7 @@
 ;; Variables Bucket
 (setq
  ;; default-directory "/home/robert" ;; Linux
- default-directory "C:\Users\robertmcatee\source" ;; Windows
+ default-directory "C:/Users/robertmcatee/source" ;; Windows
  inhibit-startup-message '(t)
  initial-scratch-message "Listo"
  initial-major-mode 'org-mode
