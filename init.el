@@ -1,12 +1,16 @@
 ;; Look and Feel
-(load-theme 'tango-dark)
-(set-frame-parameter (selected-frame) 'alpha '(95 50))
-(add-to-list 'default-frame-alist '(alpha 95 50))
+(load-theme 'tsdh-dark)
+(set-frame-parameter (selected-frame) 'alpha '(95 75))
+(add-to-list 'default-frame-alist '(alpha 95 75))
 
 ;; Fonts
 (custom-set-faces
- ;; '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 90 :width normal))))) ;; Linux
- '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 100 :width normal))))) ;; Windows
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
+ ;; Windows
 
 ;; load emacs 24's package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
@@ -24,6 +28,18 @@
   (package-refresh-contents)
   (package-install 'markdown-mode))
 (require 'markdown-mode)
+
+;; Export to Markdown
+(unless (package-installed-p 'ox-mdx-deck)
+  (package-refresh-contents)
+  (package-install 'ox-md))
+(require 'ox-md)
+
+;; Tabbar
+(unless (package-installed-p 'tabbar)
+  (package-refresh-contents)
+  (package-install 'tabbar))
+(require 'tabbar)
 
 ;; Babel
 (org-babel-do-load-languages
@@ -49,8 +65,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages 'markdown-mode)
+ '(package-selected-packages '(tabbar ox-mdx-deck ox-jekyll-md markdown-mode))
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(tabbar-mode 1)
+ '(tabbar-buffer-groups-function (lambda () (list "All"))))
 
 (set-background-color "#16161D")
