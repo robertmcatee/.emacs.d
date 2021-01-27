@@ -1,7 +1,7 @@
 ;; Look and Feel
 (load-theme 'tsdh-dark)
-(set-frame-parameter (selected-frame) 'alpha '(95 75))
-(add-to-list 'default-frame-alist '(alpha 95 75))
+(set-frame-parameter (selected-frame) 'alpha '(95 95))
+(add-to-list 'default-frame-alist '(alpha 95 95))
 
 ;; Fonts
 (custom-set-faces
@@ -11,6 +11,8 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
  ;; Windows
+ ;;'(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
+ ;; Linux
 
 ;; load emacs 24's package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
@@ -32,8 +34,16 @@
 ;; Export to Markdown
 (unless (package-installed-p 'ox-mdx-deck)
   (package-refresh-contents)
-  (package-install 'ox-md))
-(require 'ox-md)
+  (package-install 'ox-mdx-deck))
+(require 'ox-mdx-deck)
+(unless (package-installed-p 'ox-jekyll-md)
+  (package-refresh-contents)
+  (package-install 'ox-jekyll-md))
+(require 'ox-jekyll-md)
+(unless (package-installed-p 'ox-hugo)
+  (package-refresh-contents)
+  (package-install 'ox-hugo))
+(require 'ox-hugo)
 
 ;; Tabbar
 (unless (package-installed-p 'tabbar)
@@ -54,7 +64,9 @@
  ;; default-directory "/home/robert" ;; Linux
  default-directory "C:/Users/robertmcatee/source" ;; Windows
  inhibit-startup-message '(t)
- initial-scratch-message "Listo"
+ initial-scratch-message "* TODO [#A] New Theme
+** New Epic [0/1]
+- [ ] New Task"
  initial-major-mode 'org-mode
  org-startup-indented '(t)
  package-selected-packages 'markdown-mode)
@@ -72,3 +84,4 @@
  '(tabbar-buffer-groups-function (lambda () (list "All"))))
 
 (set-background-color "#16161D")
+;; (global-set-key (kbd "<scroll>") nil)
