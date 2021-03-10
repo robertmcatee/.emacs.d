@@ -43,7 +43,7 @@
 
 ;; Look and Feel
 ;; (load-theme 'tsdh-dark)
-(load-theme 'sanityinc-solarized-dark)
+(load-theme 'sanityinc-solarized-dark t)
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
