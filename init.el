@@ -53,9 +53,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
+ ;;'(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
  ;; Windows
- ;;'(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 100 :width normal)))))
  ;; Linux
 
 ;; Babel
@@ -68,8 +68,8 @@
 
 ;; Variables Bucket
 (setq
- ;; default-directory "/home/robert" ;; Linux
- default-directory "C:/Users/robertmcatee/source" ;; Windows
+ default-directory "/home/" ;; Linux
+ ;; default-directory "C:/Users/robertmcatee/source" ;; Windows
  inhibit-startup-message '(t)
  initial-scratch-message "* TODO [#A] New Theme
 ** New Epic [0/1]
@@ -92,5 +92,5 @@
  '(tabbar-mode 1 nil (tabbar))
  '(tool-bar-mode nil))
 
-(set-background-color "#16161D")
+;; (set-background-color "#16161D")
 ;; (global-set-key (kbd "<scroll>") nil)
