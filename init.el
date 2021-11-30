@@ -9,6 +9,9 @@
     )
 )
 
+;; Added on 11/30/21, error on new install
+(package-initialize)
+
 ;; Solarized Dark Theme
 (unless (package-installed-p 'color-theme-sanityinc-solarized)
   (package-refresh-contents)
@@ -94,3 +97,32 @@
 
 ;; (set-background-color "#16161D")
 ;; (global-set-key (kbd "<scroll>") nil)
+
+
+;; Tab Bar Customizations
+(require 'tabbar)
+(customize-set-variable 'tabbar-background-color "gray20")
+(customize-set-variable 'tabbar-separator '(0.5))
+(customize-set-variable 'tabbar-use-images nil)
+(tabbar-mode 1)
+
+;; My preferred keys
+(define-key global-map [(alt j)] 'tabbar-backward)
+(define-key global-map [(alt k)] 'tabbar-forward)
+
+;; Colors
+(set-face-attribute 'tabbar-default nil
+        :background "gray20" :foreground 
+        "gray60" :distant-foreground "gray50"
+        :family "Liberation Mono" :box nil)
+(set-face-attribute 'tabbar-unselected nil
+        :background "gray80" :foreground "black" :box nil)
+(set-face-attribute 'tabbar-modified nil
+        :foreground "red4" :box nil
+        :inherit 'tabbar-unselected)
+(set-face-attribute 'tabbar-selected nil
+        :background "#4090c0" :foreground "white" :box nil)
+(set-face-attribute 'tabbar-selected-modified nil
+        :inherit 'tabbar-selected :foreground "GoldenRod2" :box nil)
+(set-face-attribute 'tabbar-button nil
+        :box nil)
