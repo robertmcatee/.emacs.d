@@ -1,4 +1,4 @@
-;; load emacs 24's package system. Add MELPA repository.
+;; load emacs 24+ package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
   (require 'package)
     (package-initialize)
@@ -9,6 +9,14 @@
       '("melpa" . "https://melpa.org/packages/") t
     )
 )
+
+;; Bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile (require 'use-package))
+(setq use-package-always-ensure t)
+(require 'bind-key)
 
 ;; Solarized Dark Theme
 (unless (package-installed-p 'color-theme-sanityinc-solarized)
