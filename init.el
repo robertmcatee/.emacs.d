@@ -14,28 +14,28 @@
 (require 'bind-key)
 
 ;; Solarized Dark Theme
-(use-package 'color-theme-sanityinc-solarized)
+(use-package color-theme-sanityinc-solarized)
 ;;(unless (package-installed-p 'color-theme-sanityinc-solarized)
 ;;  (package-refresh-contents)
 ;;  (package-install 'color-theme-sanityinc-solarized))
 ;;(require 'color-theme-sanityinc-solarized)
 
 ;; Markdown Mode
-(use-package 'markdown-mode)
+(use-package markdown-mode)
 ;;(unless (package-installed-p 'markdown-mode)
 ;;  (package-refresh-contents)
 ;;  (package-install 'markdown-mode))
 ;;(require 'markdown-mode)
 
 ;; Export to Markdown
-(use-package 'ox-mdx-deck)
+(use-package ox-mdx-deck)
 ;;(unless (package-installed-p 'ox-mdx-deck)
 ;;  (package-refresh-contents)
 ;;  (package-install 'ox-mdx-deck))
 ;;(require 'ox-mdx-deck)
 
 ;; Tabbar
-(use-package 'tabbar)
+(use-package tabbar)
 ;;(unless (package-installed-p 'tabbar)
 ;;  (package-refresh-contents)
 ;;  (package-install 'tabbar))
