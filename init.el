@@ -2,15 +2,10 @@
 (when (>= emacs-major-version 24)
   (require 'package)
     (package-initialize)
-    (add-to-list
-      'package-archives
-      ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
-      ;;'("melpa" . "http://melpa.milkbox.net/packages/") t
-      '("melpa" . "https://melpa.org/packages/") t
-    )
-)
+    (add-to-list 'package-archives 
+                 '("melpa" . "https://melpa.org/packages/") t))
 
-;; Bootstrap use-package
+;; Bootstrap use-package, from example provided by Richard Thames
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -19,36 +14,32 @@
 (require 'bind-key)
 
 ;; Solarized Dark Theme
-(unless (package-installed-p 'color-theme-sanityinc-solarized)
-  (package-refresh-contents)
-  (package-install 'color-theme-sanityinc-solarized))
-(require 'color-theme-sanityinc-solarized)
+(use-package 'color-theme-sanityinc-solarized)
+;;(unless (package-installed-p 'color-theme-sanityinc-solarized)
+;;  (package-refresh-contents)
+;;  (package-install 'color-theme-sanityinc-solarized))
+;;(require 'color-theme-sanityinc-solarized)
 
 ;; Markdown Mode
-(unless (package-installed-p 'markdown-mode)
-  (package-refresh-contents)
-  (package-install 'markdown-mode))
-(require 'markdown-mode)
+(use-package 'markdown-mode)
+;;(unless (package-installed-p 'markdown-mode)
+;;  (package-refresh-contents)
+;;  (package-install 'markdown-mode))
+;;(require 'markdown-mode)
 
 ;; Export to Markdown
-(unless (package-installed-p 'ox-mdx-deck)
-  (package-refresh-contents)
-  (package-install 'ox-mdx-deck))
-(require 'ox-mdx-deck)
-(unless (package-installed-p 'ox-jekyll-md)
-  (package-refresh-contents)
-  (package-install 'ox-jekyll-md))
-(require 'ox-jekyll-md)
-(unless (package-installed-p 'ox-hugo)
-  (package-refresh-contents)
-  (package-install 'ox-hugo))
-(require 'ox-hugo)
+(use-package 'ox-mdx-deck)
+;;(unless (package-installed-p 'ox-mdx-deck)
+;;  (package-refresh-contents)
+;;  (package-install 'ox-mdx-deck))
+;;(require 'ox-mdx-deck)
 
 ;; Tabbar
-(unless (package-installed-p 'tabbar)
-  (package-refresh-contents)
-  (package-install 'tabbar))
-(require 'tabbar)
+(use-package 'tabbar)
+;;(unless (package-installed-p 'tabbar)
+;;  (package-refresh-contents)
+;;  (package-install 'tabbar))
+;;(require 'tabbar)
 
 ;; Look and Feel
 ;; (load-theme 'tsdh-dark)
@@ -64,7 +55,7 @@
  ;; If there is more than one, they won't work right.
  ;;'(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
  ;; Windows
- '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 100 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
  ;; Linux
 
 ;; Babel
