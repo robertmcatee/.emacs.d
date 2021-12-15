@@ -13,58 +13,27 @@
 (setq use-package-always-ensure t)
 (require 'bind-key)
 
-;; Solarized Dark Theme
+;; Packages
 (use-package color-theme-sanityinc-solarized)
-;;(unless (package-installed-p 'color-theme-sanityinc-solarized)
-;;  (package-refresh-contents)
-;;  (package-install 'color-theme-sanityinc-solarized))
-;;(require 'color-theme-sanityinc-solarized)
-
-;; Markdown Mode
 (use-package markdown-mode)
-;;(unless (package-installed-p 'markdown-mode)
-;;  (package-refresh-contents)
-;;  (package-install 'markdown-mode))
-;;(require 'markdown-mode)
-
-;; Export to Markdown
 (use-package ox-mdx-deck)
-;;(unless (package-installed-p 'ox-mdx-deck)
-;;  (package-refresh-contents)
-;;  (package-install 'ox-mdx-deck))
-;;(require 'ox-mdx-deck)
-
-;; Tabbar
 (use-package tabbar)
-;;(unless (package-installed-p 'tabbar)
-;;  (package-refresh-contents)
-;;  (package-install 'tabbar))
-;;(require 'tabbar)
 
 ;; Look and Feel
-;; (load-theme 'tsdh-dark)
 (load-theme 'sanityinc-solarized-dark t)
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
 ;; Fonts
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;;'(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
  ;; Windows
- '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ ;;'(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
+ 
  ;; Linux
+ '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
 
 ;; Babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '(
-   (python .t)
-   )
- )
+(org-babel-do-load-languages 'org-babel-load-languages '((python .t)))
 
 ;; Variables Bucket
 (setq
