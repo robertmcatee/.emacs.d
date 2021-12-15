@@ -1,6 +1,7 @@
 ;; load emacs 24's package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
   (require 'package)
+    (package-initialize)
     (add-to-list
       'package-archives
       ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
@@ -8,9 +9,6 @@
       '("melpa" . "https://melpa.org/packages/") t
     )
 )
-
-;; Added on 11/30/21, error on new install
-(package-initialize)
 
 ;; Solarized Dark Theme
 (unless (package-installed-p 'color-theme-sanityinc-solarized)
