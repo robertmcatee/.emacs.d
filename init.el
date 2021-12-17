@@ -18,6 +18,14 @@
 (use-package markdown-mode)
 (use-package ox-mdx-deck)
 (use-package tabbar)
+(use-package undo-tree 
+  :bind
+    ("C-x u" . undo-tree-visualize)
+  :config
+    (global-undo-tree-mode))
+(use-package magit
+  :bind
+    ("C-x g" . magit-status))
 
 ;; Look and Feel
 (load-theme 'sanityinc-solarized-dark t)
