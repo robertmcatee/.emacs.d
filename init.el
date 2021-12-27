@@ -72,6 +72,9 @@
 ;; (set-background-color "#16161D")
 ;; (global-set-key (kbd "<scroll>") nil)
 
+;; Move backup files to central location
+(setq backup-directory-alist `(("." . "~/.emacs-saves")))
+(setq backup-by-copying t)
 
 ;; Tab Bar Customizations
 (require 'tabbar)
