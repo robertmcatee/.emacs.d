@@ -39,10 +39,10 @@
 
 ;; Load Theme
 (load-theme 'solarized-light t)
-(load-theme 'solarized-dark t)
-(if (display-graphic-p) 
-    (enable-theme 'solarized-light) 
-  (enable-theme 'solarized-dark))
+;;(load-theme 'solarized-dark t)
+;;(if (display-graphic-p) 
+;;    (enable-theme 'solarized-light) 
+;;  (enable-theme 'solarized-dark))
 
 ;; Add some transparency
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
