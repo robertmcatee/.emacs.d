@@ -14,7 +14,7 @@
 (require 'bind-key)
 
 ;; Packages
-(use-package color-theme-sanityinc-solarized)
+(use-package solarized-theme)
 (use-package markdown-mode)
 (use-package ox-mdx-deck)
 (use-package tabbar)
@@ -28,7 +28,8 @@
     ("C-x g" . magit-status))
 
 ;; Look and Feel
-(load-theme 'sanityinc-solarized-dark t)
+;; https://github.com/bbatsov/solarized-emacs
+(load-theme 'solarized-dark t)
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
