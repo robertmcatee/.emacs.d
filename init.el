@@ -36,9 +36,14 @@
 (setq solarized-height-plus-2 1.0)
 (setq solarized-height-plus-3 1.0)
 (setq solarized-height-plus-4 1.0)
+
 ;; Load Theme
-;; https://github.com/bbatsov/solarized-emacs
 (load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
+(if (display-graphic-p) 
+    (enable-theme 'solarized-light) 
+  (enable-theme 'solarized-dark))
+
 ;; Add some transparency
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
@@ -49,16 +54,16 @@
  ;;'(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
  
  ;; Linux
- '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 110 :width normal)))))
 
 ;; Babel
 (org-babel-do-load-languages 'org-babel-load-languages '((python .t)))
 
 ;; Variables Bucket
 (setq
- default-directory "/home/" ;; Linux
- ;; default-directory "C:/Users/robertmcatee/source" ;; Windows
- inhibit-startup-message '(t)
+ default-directory "/home/robertmcatee/Dropbox/org" ;; Linux
+  ;; default-directory "C:/Users/robertmcatee/source" ;; Windows
+  inhibit-startup-message '(t)
  initial-scratch-message "* TODO [#A] New Theme
 ** New Epic [0/1]
 - [ ] New Task"
