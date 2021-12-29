@@ -94,7 +94,7 @@
 
 ;; Tab Bar Customizations
 (require 'tabbar)
-(customize-set-variable 'tabbar-background-color "gray20")
+(customize-set-variable 'tabbar-background-color "#eee8d5")
 (customize-set-variable 'tabbar-separator '(0.5))
 (customize-set-variable 'tabbar-use-images nil)
 (tabbar-mode 1)
@@ -105,16 +105,16 @@
 
 ;; Colors
 (set-face-attribute 'tabbar-default nil
-        :background "gray20" :foreground 
-        "gray60" :distant-foreground "gray50"
+        :background "#eee8d5" :foreground 
+        "gray60" :distant-foreground "gray40"
         :family "Liberation Mono" :box nil)
 (set-face-attribute 'tabbar-unselected nil
-        :background "gray80" :foreground "black" :box nil)
+        :background "#839496" :foreground "black" :box nil)
 (set-face-attribute 'tabbar-modified nil
-        :foreground "red4" :box nil
+        :foreground "#dc322f" :box nil
         :inherit 'tabbar-unselected)
 (set-face-attribute 'tabbar-selected nil
-        :background "#4090c0" :foreground "white" :box nil)
+        :background "#2aa198" :foreground "white" :box nil)
 (set-face-attribute 'tabbar-selected-modified nil
         :inherit 'tabbar-selected :foreground "GoldenRod2" :box nil)
 (set-face-attribute 'tabbar-button nil
