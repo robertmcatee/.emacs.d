@@ -28,8 +28,18 @@
     ("C-x g" . magit-status))
 
 ;; Look and Feel
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+;; Avoid all font-size changes
+(setq solarized-height-minus-1 1.0)
+(setq solarized-height-plus-1 1.0)
+(setq solarized-height-plus-2 1.0)
+(setq solarized-height-plus-3 1.0)
+(setq solarized-height-plus-4 1.0)
+;; Load Theme
 ;; https://github.com/bbatsov/solarized-emacs
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
+;; Add some transparency
 (set-frame-parameter (selected-frame) 'alpha '(95 95))
 (add-to-list 'default-frame-alist '(alpha 95 95))
 
