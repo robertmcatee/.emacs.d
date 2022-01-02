@@ -17,6 +17,7 @@
 (use-package solarized-theme)
 (use-package markdown-mode)
 (use-package ox-mdx-deck)
+(use-package ox-haunt)
 (use-package tabbar)
 (use-package undo-tree 
   :bind
