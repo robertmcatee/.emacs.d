@@ -57,8 +57,10 @@
  ;; Linux
  '(default ((t (:family "Liberation Mono" :foundry "outline" :slant normal :weight normal :height 110 :width normal)))))
 
-;; Babel
-(org-babel-do-load-languages 'org-babel-load-languages '((python .t)))
+;; Babel and Geiser
+(use-package geiser)
+(use-package geiser-guile)
+(org-babel-do-load-languages 'org-babel-load-languages '((scheme .t)(python .t)))
 
 ;; Variables Bucket
 (setq
