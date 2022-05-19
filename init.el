@@ -24,6 +24,9 @@
     ("C-x g" . magit-status))
 (use-package ox-haunt)
 
+;; Eliminate Tabs
+(setq-default indent-tabs-mode nil)
+
 ;; Look and Feel
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
