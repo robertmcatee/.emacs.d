@@ -242,4 +242,5 @@
 (calendar)
 ;; open file in main window
 ;; open tasks.org in middle right
-(windmove-default-keybindings)
+
+(windmove-default-keybindings 'meta) ;; conflicts with org-mode but good enough for now
