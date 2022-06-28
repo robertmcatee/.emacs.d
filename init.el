@@ -1,3 +1,12 @@
+(add-hook 'emacs-startup-hook 'treemacs)
+(split-window-right)
+(other-window 1)
+(split-window-below)
+(other-window -1)
+;; open file in main window
+;; open tasks.org in top right
+;; open terminal M-x shell bottom right
+
 ;; load emacs 24+ package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -36,11 +45,11 @@
 (global-display-line-numbers-mode)
 (setq inhibit-startup-message '(t))
 (custom-set-faces
- '(default ((t (:family "Liberation Mono"
+ '(default ((t (:family "Consolas"
 			:foundry "outline"
 			:slant normal
 			:weight normal
-			:height 100
+			:height 110
 			:width normal)))))
 (use-package solarized-theme)
 (setq solarized-use-variable-pitch nil)
@@ -49,15 +58,18 @@
 (setq solarized-height-plus-2 1.0)
 (setq solarized-height-plus-3 1.0)
 (setq solarized-height-plus-4 1.0)
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 
 ;; orgmode
 (setq initial-major-mode 'org-mode)
 (setq org-startup-indented '(t))
-(setq default-directory "/home/robertmcatee/Dropbox/org")
-(setq initial-scratch-message "* TODO [#A] New Theme
-** New Epic [0/1]
-- [ ] New Task"
+(setq default-directory "/home/robertmcatee/OneDrive/Documents/org")
+(setq initial-scratch-message "* Tasks
+** Today [0/1]
+*** TODO New Task
+** Tomorrow [0/0]
+** Soon [0/0]
+** Later [0/0]"
 )
 
 ;; Backup Files
@@ -93,7 +105,7 @@
           treemacs-find-workspace-method           'find-for-file-or-pick-first
           treemacs-git-command-pipe                ""
           treemacs-goto-tag-strategy               'refetch-index
-          treemacs-header-scroll-indicators        '(nil . "^^^^^^")'
+          ;;treemacs-header-scroll-indicators        '(nil . "^^^^^^")'
           treemacs-hide-dot-git-directory          t
           treemacs-indentation                     2
           treemacs-indentation-string              " "
@@ -126,9 +138,9 @@
           treemacs-user-mode-line-format           nil
           treemacs-user-header-line-format         nil
           treemacs-wide-toggle-width               70
-          treemacs-width                           35
+          treemacs-width                           25
           treemacs-width-increment                 1
-          treemacs-width-is-initially-locked       t
+          treemacs-width-is-initially-locked       nil
           treemacs-workspace-switch-cleanup        nil)
 
     ;; The default width and height of the icons is 22 pixels. If you are
