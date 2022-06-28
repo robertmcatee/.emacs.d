@@ -1,12 +1,3 @@
-(add-hook 'emacs-startup-hook 'treemacs)
-(split-window-right)
-(other-window 1)
-(split-window-below)
-(other-window -1)
-;; open file in main window
-;; open tasks.org in top right
-;; open terminal M-x shell bottom right
-
 ;; load emacs 24+ package system. Add MELPA repository.
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -46,11 +37,11 @@
 (setq inhibit-startup-message '(t))
 (custom-set-faces
  '(default ((t (:family "Consolas"
-			:foundry "outline"
-			:slant normal
-			:weight normal
-			:height 110
-			:width normal)))))
+      :foundry "outline"
+      :slant normal
+      :weight normal
+      :height 110
+      :width normal)))))
 (use-package solarized-theme)
 (setq solarized-use-variable-pitch nil)
 (setq solarized-height-minus-1 1.0)
@@ -60,7 +51,13 @@
 (setq solarized-height-plus-4 1.0)
 (load-theme 'solarized-dark t)
 
-;; orgmode
+;; cua-mode
+(cua-mode t)
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(transient-mark-mode 1) ;; No region when it is not highlighted
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
+;; org-mode
 (setq initial-major-mode 'org-mode)
 (setq org-startup-indented '(t))
 (setq default-directory "/home/robertmcatee/OneDrive/Documents/org")
@@ -231,3 +228,17 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode)
+
+;; default windows
+(add-hook 'emacs-startup-hook 'treemacs)
+(split-window-right)
+(other-window 1)
+(split-window-below)
+(split-window-below)
+(other-window -1)
+(other-window -1)
+(shell)
+(other-window -1)
+(calendar)
+;; open file in main window
+;; open tasks.org in middle right
