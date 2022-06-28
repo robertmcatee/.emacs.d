@@ -242,3 +242,4 @@
 (calendar)
 ;; open file in main window
 ;; open tasks.org in middle right
+(windmove-default-keybindings)
