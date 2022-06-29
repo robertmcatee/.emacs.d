@@ -51,12 +51,6 @@
 (setq solarized-height-plus-4 1.0)
 (load-theme 'solarized-dark t)
 
-;; cua-mode
-(cua-mode t)
-(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
-(transient-mark-mode 1) ;; No region when it is not highlighted
-(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
-
 ;; org-mode
 (setq initial-major-mode 'org-mode)
 (setq org-startup-indented '(t))
@@ -242,5 +236,31 @@
 (calendar)
 ;; open file in main window
 ;; open tasks.org in middle right
-
 (windmove-default-keybindings 'meta) ;; conflicts with org-mode but good enough for now
+
+;; org-roam
+;;  (setq org-directory (concat (getenv "HOME") "/Downloads/org-roam/"))
+(setq org-directory "c:/Users/robertmcatee/Downloads")
+
+  (use-package org-roam
+    :after org
+    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+    :custom
+    (org-roam-directory (file-truename org-directory))
+    :config
+    (org-roam-setup)
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n r" . org-roam-node-random)       
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle)))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(org-roam use-package undo-tree treemacs-tab-bar treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil tabbar solarized-theme ox-haunt lsp-ui geiser-guile)))
