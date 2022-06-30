@@ -56,13 +56,40 @@
 (setq initial-major-mode 'org-mode)
 (setq org-startup-indented '(t))
 (setq default-directory "~/")
-(setq initial-scratch-message "* Tasks
+(setq initial-scratch-message "
+#+title:  Example Org File
+#+author: TEC
+#+date:   2020-10-27
+
+* Learn Org
+
+Org makes easy things trivial and complex things practical.
+
+You don't need to learn Org before using Org: read the quickstart
+page and you should be good to go.  If you need more, Org will be
+here for you as well: dive into the manual and join the community!
+
+* Tasks
 ** Today [0/1]
 *** TODO New Task
 ** Tomorrow [0/0]
 ** Soon [0/0]
-** Later [0/0]"
-)
+** Later [0/0]
+
+* Code
+#+begin_src python
+from pathlib import Path
+cssRatios = []
+return cssRatios
+#+end_src
+
+#+RESULTS:
+| index.css    | 76% minified ( 1.4 KiB) |
+| org-demo.css | 77% minified ( 2.8 KiB) |
+| errors.css   | 74% minified ( 4.9 KiB) |
+| org.css      | 75% minified (10.7 KiB) |
+
+")
 
 ;; Backup Files
 ;; Move backup files to central location
