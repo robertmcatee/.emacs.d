@@ -13,10 +13,22 @@
 (setq use-package-always-ensure t)
 (require 'bind-key)
 
+;; Misc Packages
+(use-package undo-tree 
+  :bind
+    ("C-x u" . undo-tree-visualize)
+  :config
+    (global-undo-tree-mode))
+(use-package magit
+  :bind
+    ("C-x g" . magit-status))
+(use-package ox-haunt)
+
 ;; Eliminate Tabs
 (setq-default indent-tabs-mode nil)
 
 ;; Look and Feel
+(windmove-default-keybindings 'meta)
 (tool-bar-mode -1)
 (tab-bar-mode -1)
 (menu-bar-mode -1)
@@ -57,5 +69,7 @@
 (setq backup-directory-alist `(("." . "~/.emacs-saves")))
 (setq backup-by-copying t)
 
-;; windmove
-(windmove-default-keybindings 'meta)
+;; Babel and Geiser
+(use-package geiser)
+(use-package geiser-guile)
+(org-babel-do-load-languages 'org-babel-load-languages '((scheme .t)(python .t)))
