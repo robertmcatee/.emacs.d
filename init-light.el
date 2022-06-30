@@ -1,3 +1,18 @@
+;; load emacs 24+ package system. Add MELPA repository.
+(when (>= emacs-major-version 24)
+  (require 'package)
+    (package-initialize)
+    (add-to-list 'package-archives 
+                 '("melpa" . "https://melpa.org/packages/") t))
+
+;; Bootstrap use-package, from example provided by Richard Thames
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile (require 'use-package))
+(setq use-package-always-ensure t)
+(require 'bind-key)
+
 ;; Eliminate Tabs
 (setq-default indent-tabs-mode nil)
 
@@ -28,7 +43,7 @@
 ;; org-mode
 (setq initial-major-mode 'org-mode)
 (setq org-startup-indented '(t))
-(setq default-directory "c:/Users/robertmcatee/Downloads")
+(setq default-directory "~/")
 (setq initial-scratch-message "* Tasks
 ** Today [0/1]
 *** TODO New Task
