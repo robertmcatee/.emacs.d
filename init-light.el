@@ -14,3 +14,6 @@
 ;; Move backup files to central location
 (setq backup-directory-alist `(("." . "~/.emacs-saves")))
 (setq backup-by-copying t)
+
+;; Wind Move
+(windmove-default-keybindings 'meta)
