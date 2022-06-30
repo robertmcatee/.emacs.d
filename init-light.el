@@ -3,7 +3,7 @@
   (require 'package)
     (package-initialize)
     (add-to-list 'package-archives 
-                 '("melpa" . "https://melpa.org/packages/") t))
+                 '("melpa-stable" . "https://stable.melpa.org/packages/") t))
 
 ;; Bootstrap use-package, from example provided by Richard Thames
 (unless (package-installed-p 'use-package)
