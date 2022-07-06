@@ -100,3 +100,44 @@ return cssRatios
 (use-package geiser)
 (use-package geiser-guile)
 (org-babel-do-load-languages 'org-babel-load-languages '((scheme .t)(python .t)))
+
+;; go-mode for golang support
+(use-package go-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
+(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd "C-c i") 'go-goto-imports)))
+(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd \"M-.\") 'godef-jump)))
+
+;; lsp-mode for language server protocol support
+(use-package lsp-mode
+:commands (lsp lsp-deferred)
+:init
+(setq lsp-keymap-prefix "C-c l")
+:config
+(lsp-enable-which-key-integration t)
+:hook
+((go-mode) . lsp))
+
+;; lsp-ui
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :config
+  (setq lsp-ui-doc-enable t))
+  
+;; To set the garbage collection threshold to high (100 MB) since LSP client-server communication generates a lot of output/garbage
+(setq gc-cons-threshold 100000000)
+;; To increase the amount of data Emacs reads from a process
+(setq read-process-output-max (* 1024 1024)) 
+
+;; dap-mode for debugging support
+(use-package dap-mode)
+
+;; activate company mode for completion
+(use-package company)
+(add-hook 'after-init-hook 'global-company-mode)
+; completion suggestion order depends on most often used completion
+(add-hook 'after-init-hook 'company-statistics-mode)
+(setq company-idle-delay 0)
