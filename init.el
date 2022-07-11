@@ -80,12 +80,12 @@ here for you as well: dive into the manual and join the community!
 ** Later [0/0]
 
 * Code
-#+begin_src python
-from pathlib import Path
-cssRatios = []
-return cssRatios
+#+begin_src scheme
+(begin
+  (display "Hello, World!"")
+  (newline))
 #+end_src
-
+ 
 #+RESULTS:
 | index.css    | 76% minified ( 1.4 KiB) |
 | org-demo.css | 77% minified ( 2.8 KiB) |
