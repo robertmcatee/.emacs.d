@@ -33,6 +33,9 @@
 (tab-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(global-hl-line-mode +1)
+(show-paren-mode 1)
+(setq show-paren-delay 0)
 (global-set-key [f11] 'toggle-menu-bar-mode-from-frame)
 (global-display-line-numbers-mode)
 (setq inhibit-startup-message '(t))
@@ -96,9 +99,18 @@ return cssRatios
 (setq backup-directory-alist `(("." . "~/.emacs-saves")))
 (setq backup-by-copying t)
 
-;; Babel and Geiser
+;; Geiser
 (use-package geiser)
 (use-package geiser-guile)
+(use-package ac-geiser)
+(ac-config-default)
+(require 'ac-geiser)
+(add-hook 'geiser-mode-hook 'ac-geiser-setup)
+(add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes' geiser-repl-mode))
+
+;; Babel
 (org-babel-do-load-languages 'org-babel-load-languages '((scheme .t)(python .t)))
 
 ;; go-mode for golang support
