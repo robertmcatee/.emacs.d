@@ -82,7 +82,7 @@ here for you as well: dive into the manual and join the community!
 * Code
 #+begin_src scheme
 (begin
-  (display "Hello, World!"")
+  (display 'Hello, World!')
   (newline))
 #+end_src
  
