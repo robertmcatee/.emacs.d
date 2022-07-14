@@ -110,8 +110,16 @@ here for you as well: dive into the manual and join the community!
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes' geiser-repl-mode))
 
+;; Mermaid
+(use-package ob-mermaid)
+(setq ob-mermaid-cli-path "/your-installating-path/node_modules/.bin/mmdc")
+
 ;; Babel
-(org-babel-do-load-languages 'org-babel-load-languages '((scheme .t)(python .t)))
+(org-babel-do-load-languages
+    'org-babel-load-languages
+    '((mermaid . t)
+      (scheme . t)
+      (python . t)))
 
 ;; go-mode for golang support
 (use-package go-mode)
