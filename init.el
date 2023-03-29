@@ -129,9 +129,10 @@ here for you as well: dive into the manual and join the community!
 (add-hook 'go-mode-hook (lambda ()
                           (local-set-key (kbd "C-c i") 'go-goto-imports)))
 (add-hook 'go-mode-hook (lambda ()
-                          (local-set-key (kbd \"M-.\") 'godef-jump)))
+                          (local-set-key (kbd "M-.") 'godef-jump)))
 
 ;; lsp-mode for language server protocol support
+(use-package which-key)
 (use-package lsp-mode
 :commands (lsp lsp-deferred)
 :init
@@ -158,6 +159,7 @@ here for you as well: dive into the manual and join the community!
 ;; activate company mode for completion
 (use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
-; completion suggestion order depends on most often used completion
+;; completion suggestion order depends on most often used completion
+(use-package company-statistics)
 (add-hook 'after-init-hook 'company-statistics-mode)
 (setq company-idle-delay 0)
